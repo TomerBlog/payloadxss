@@ -1,0 +1,3071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EFB7C6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="35 Days of Love">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiMzUgRGF5cyBvZiBMb3ZlIiwic2hvcnRfbmFtZSI6IkZvciBOb2FtIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNGRkY5RjYiLCJ0aGVtZV9jb2xvciI6IiNFRkI3QzYiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyUzRSUzQ3RleHQgeT0nLjllbScgZm9udC1zaXplPSc5MCclM0UlRjAlOUYlOTIlOTYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>35 Days to Your Birthday — For Noam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF9F6;
+            --blush: #EFB7C6;
+            --powder: #C7D7E8;
+            --soft-black: #2A2A2A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF4EE 100%);
+            color: var(--soft-black);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            * {
+                transition: all 0.3s ease;
+            }
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 300;
+            color: var(--soft-black);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero .for-noam {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            color: var(--blush);
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        /* Countdown */
+        .countdown-card {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .countdown-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--soft-black);
+        }
+
+        .countdown-timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .time-unit {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            color: var(--white);
+        }
+
+        .time-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .today-surprise-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(239, 183, 198, 0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .today-surprise-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.5);
+        }
+
+        .today-surprise-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Calendar Grid */
+        .calendar-section {
+            animation: fadeInUp 1s ease 0.4s both;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+
+        .day-card {
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .day-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .day-card.unlocked:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.3);
+        }
+
+        .day-card.locked {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .day-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-icon {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 2rem;
+            max-width: 600px;
+            width: calc(100% - 2rem);
+            margin: 2rem auto;
+            padding: 3rem 2rem 2rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s ease;
+            max-height: none;
+            min-height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.05);
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--soft-black);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .day-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .day-meta {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .love-note {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            color: var(--blush);
+            text-align: center;
+            line-height: 1.6;
+            padding: 1.5rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+        }
+
+        .block-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--blush);
+        }
+
+        .block-text {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .prompt-box {
+            background: linear-gradient(135deg, var(--powder) 0%, #B8CDE0 100%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            color: var(--white);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Interactive Games */
+        .interactive-game {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .game-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blush);
+        }
+
+        /* Love Letter Puzzle */
+        .puzzle-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .puzzle-word {
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        .puzzle-word:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 183, 198, 0.3);
+        }
+
+        .puzzle-word.correct {
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            cursor: default;
+        }
+
+        /* Memory Card Game */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover:not(.flipped):not(.matched) {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped, .memory-card.matched {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+        }
+
+        .memory-card:not(.flipped):not(.matched) {
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+        }
+
+        /* Love Meter */
+        .love-meter-container {
+            margin: 1.5rem 0;
+        }
+
+        .love-meter {
+            width: 100%;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .love-meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blush) 0%, #ff6b9d 100%);
+            width: 0%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .love-button {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 15px rgba(239, 183, 198, 0.4);
+        }
+
+        .love-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.5);
+        }
+
+        /* Fortune Teller */
+        .fortune-box {
+            min-height: 80px;
+            background: var(--white);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Heart Rain */
+        .heart-catcher {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(180deg, #fff9f6 0%, #ffe8e8 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            cursor: crosshair;
+        }
+
+        .falling-heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: fall linear;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(300px);
+            }
+        }
+
+        .score-display {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--blush);
+            margin-top: 1rem;
+        }
+
+        /* Kiss Counter */
+        .kiss-button {
+            width: 120px;
+            height: 120px;
+            font-size: 4rem;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--blush) 0%, #ff6b9d 100%);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(239, 183, 198, 0.4);
+            transition: all 0.2s ease;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .kiss-button:active {
+            transform: scale(0.95);
+        }
+
+        .kiss-counter {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--blush);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Scratch Card */
+        .scratch-card {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            margin: 1.5rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        .scratch-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 1rem;
+        }
+
+        /* Spin the Wheel */
+        .wheel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid var(--blush);
+            position: relative;
+            transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+
+        .wheel-section {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: 100% 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            z-index: 10;
+        }
+
+        /* Tic Tac Toe */
+        .tictactoe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-width: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .tictactoe-cell {
+            aspect-ratio: 1;
+            background: var(--white);
+            border: 3px solid var(--blush);
+            border-radius: 0.5rem;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tictactoe-cell:hover:not(.taken) {
+            background: rgba(239, 183, 198, 0.1);
+            transform: scale(1.05);
+        }
+
+        .tictactoe-cell.taken {
+            cursor: not-allowed;
+        }
+
+        /* Quiz Game */
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            background: var(--white);
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--blush);
+            transform: translateX(5px);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border-color: var(--blush);
+        }
+
+        .quiz-option.wrong {
+            background: #f0f0f0;
+            opacity: 0.5;
+        }
+
+        /* Type the Love */
+        .typing-game {
+            margin: 1.5rem 0;
+        }
+
+        .typing-target {
+            font-size: 1.3rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--blush);
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 0.75rem;
+        }
+
+        .typing-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: var(--blush);
+        }
+
+        /* Slider Puzzle */
+        .slider-puzzle {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-width: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .slider-tile {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slider-tile:hover {
+            transform: scale(1.05);
+        }
+
+        .slider-tile.empty {
+            background: #f0f0f0;
+            cursor: default;
+        }
+
+        /* Balloon Pop */
+        .balloon-game {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(180deg, #e8f4ff 0%, #fff9f6 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            animation: float 4s ease-in-out infinite;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .balloon:active {
+            animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* Word Search */
+        .wordsearch-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 0.25rem;
+            max-width: 400px;
+            margin: 1.5rem auto;
+        }
+
+        .wordsearch-cell {
+            aspect-ratio: 1;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .wordsearch-cell.found {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            color: var(--white);
+        }
+
+        .wordsearch-cell.selected {
+            background: rgba(239, 183, 198, 0.3);
+        }
+
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .word-item {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .word-item.found {
+            background: var(--blush);
+            color: var(--white);
+            text-decoration: line-through;
+        }
+
+        /* Connect Hearts */
+        .connect-canvas {
+            border: 3px solid var(--blush);
+            border-radius: 1rem;
+            display: block;
+            margin: 1.5rem auto;
+            background: var(--white);
+            cursor: crosshair;
+        }
+
+        /* Truth or Dare */
+        .card-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .dare-card {
+            width: 280px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: var(--white);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+
+        @media (max-width: 640px) {
+            .memory-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .wheel-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .wordsearch-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .modal-content {
+                width: calc(100% - 1rem);
+                margin: 1rem auto;
+                padding: 2.5rem 1.5rem 1.5rem;
+                border-radius: 1.5rem;
+            }
+            
+            .close-btn {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--blush);
+            background: var(--white);
+            color: var(--soft-black);
+            border-radius: 1rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--blush);
+            color: var(--white);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            color: #999;
+            font-size: 0.9rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .footer-heart {
+            display: inline-block;
+            color: var(--blush);
+            animation: heartbeat 2s ease-in-out infinite;
+            margin: 0 0.5rem;
+        }
+
+        /* Final Days Big Cards */
+        .final-days-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .final-day-card {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border: 3px solid var(--blush);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-day-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(239, 183, 198, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .final-day-card.locked {
+            opacity: 0.5;
+            filter: grayscale(0.5);
+        }
+
+        .final-day-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-day-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .final-game-container {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+        }
+
+        /* Love Letter Builder */
+        .letter-builder {
+            background: rgba(255, 249, 246, 0.9);
+            border-radius: 1rem;
+            padding: 2rem;
+            min-height: 400px;
+        }
+
+        .letter-prompts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .letter-prompt {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .letter-prompt label {
+            font-weight: 600;
+            color: var(--blush);
+            font-size: 1.1rem;
+        }
+
+        .letter-prompt input,
+        .letter-prompt textarea {
+            padding: 1rem;
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        .letter-prompt textarea {
+            min-height: 80px;
+        }
+
+        .letter-preview {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            border: 2px dashed var(--blush);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--soft-black);
+            min-height: 200px;
+            white-space: pre-wrap;
+        }
+
+        /* Photo Memory Timeline */
+        .memory-timeline {
+            padding: 2rem 0;
+        }
+
+        .memory-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .memory-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .memory-photo {
+            flex: 1;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .memory-text {
+            flex: 1;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Couple Quiz Advanced */
+        .quiz-advanced {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .quiz-question-advanced {
+            background: rgba(239, 183, 198, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--blush);
+        }
+
+        .quiz-question-advanced h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blush);
+        }
+
+        .score-tracker {
+            position: sticky;
+            top: 1rem;
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--blush);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        /* Virtual Date Night */
+        .date-planner {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .date-choice {
+            background: var(--white);
+            border: 3px solid transparent;
+            border-radius: 1rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .date-choice:hover {
+            border-color: var(--blush);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(239, 183, 198, 0.3);
+        }
+
+        .date-choice.selected {
+            border-color: var(--blush);
+            background: rgba(239, 183, 198, 0.1);
+        }
+
+        .date-choice h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--blush);
+        }
+
+        /* Birthday Wish Tree */
+        .wish-tree-container {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(180deg, #e8f4ff 0%, #fff9f6 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .wish-tree {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .tree-trunk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 100px;
+            background: #8B4513;
+            border-radius: 5px;
+        }
+
+        .tree-leaves {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 220px;
+            background: radial-gradient(circle, #90EE90 0%, #228B22 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+
+        .wish-ornament {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .wish-ornament:hover {
+            transform: scale(1.2);
+        }
+
+        .wish-input {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .wish-input input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--blush);
+            border-radius: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1); }
+        }
+
+        @media (max-width: 640px) {
+            .countdown-timer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+            
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* PWA Styles */
+        @media (display-mode: standalone) {
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        /* iOS specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>35 Days of Love</h1>
+            <div class="for-noam">For Noam</div>
+            <p class="tagline">Thirty-five days of romance, counting down to your special day</p>
+        </div>
+
+        <div class="countdown-card">
+            <h2 class="countdown-title">Time Until Your Birthday 🎂</h2>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+            <button class="today-surprise-btn" id="todaySurpriseBtn">Today's Surprise ✨</button>
+        </div>
+
+        <div class="calendar-section">
+            <h2 class="calendar-title">Our Journey Together</h2>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <div class="calendar-section" style="margin-top: 4rem;">
+            <h2 class="calendar-title" style="font-size: 2.5rem; margin-bottom: 2.5rem;">✨ The Grand Finale ✨</h2>
+            <div id="finalDaysGrid"></div>
+        </div>
+
+        <div class="footer">
+            Made with love <span class="footer-heart">♡</span> Happy Birthday, Noam
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">×</button>
+            <div class="day-header">
+                <div class="day-meta" id="dayMeta">Day 1 of 30</div>
+                <h2 class="day-title" id="dayTitle"></h2>
+            </div>
+            <div class="love-note" id="loveNote"></div>
+            <div class="divider">✿</div>
+            <div class="content-block">
+                <div class="block-title">Memory & Promise</div>
+                <div class="block-text" id="memoryPromise"></div>
+            </div>
+            <div class="content-block">
+                <div class="block-title">Our Dream</div>
+                <div class="block-text" id="londonDream"></div>
+            </div>
+            <div class="prompt-box" id="promptBox"></div>
+            <div id="interactiveGame"></div>
+            <div class="navigation">
+                <button class="nav-btn" id="prevBtn">← Yesterday</button>
+                <button class="nav-btn" id="nextBtn">Tomorrow →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const entries = [
+            {
+                title: "The Countdown Begins",
+                loveNote: "Noam, this is our little secret garden on the web. Thirty-five days of love notes, one step closer to celebrating you.",
+                memory: "I promise to make waiting feel like part of the magic.",
+                dream: "Dreaming of the moment I get to wish you the happiest birthday.",
+                prompt: "Text me a 🎀 if you're excited",
+                game: "puzzle"
+            },
+            {
+                title: "Your Smile, My Sunrise",
+                loveNote: "Your smile feels like morning light—gentle and unstoppable.",
+                memory: "I loved the first time you laughed at my silly joke; I promise more of those.",
+                dream: "Planning the perfect day to make you smile endlessly.",
+                prompt: "Send me 🍓 if you're in",
+                game: "quiz"
+            },
+            {
+                title: "I Choose You, Daily",
+                loveNote: "I don't love you by habit. I choose you—every single day.",
+                memory: "I promise to listen with all of me.",
+                dream: "Choosing you today, tomorrow, and on your special day.",
+                prompt: "Send me a 🎻",
+                game: "lovemeter"
+            },
+            {
+                title: "Your Name, A Soft Echo",
+                loveNote: "Noam sounds like a soft echo I'm always glad to hear.",
+                memory: "I cherish our late-night talks; I promise gentle nights together.",
+                dream: "Whispering birthday wishes just for you.",
+                prompt: "Send me ✨",
+                game: "typing"
+            },
+            {
+                title: "The Way You Look at Me",
+                loveNote: "That look you give me—like I'm home.",
+                memory: "I promise unhurried mornings and stolen kisses.",
+                dream: "Looking forward to seeing your face light up with joy.",
+                prompt: "Send me 🥐",
+                game: "memory"
+            },
+            {
+                title: "Safe with You",
+                loveNote: "With you, I exhale.",
+                memory: "I promise a shoulder when the world feels loud.",
+                dream: "Creating a safe space for all your birthday wishes.",
+                prompt: "Send me 🦢",
+                game: "tictactoe"
+            },
+            {
+                title: "Soft Places",
+                loveNote: "You are my soft place to land.",
+                memory: "Remember that rainy day? I promise cozy moments together.",
+                dream: "Wrapping you in warmth on your birthday.",
+                prompt: "Send me 🫖",
+                game: "kisses"
+            },
+            {
+                title: "Quiet Miracles",
+                loveNote: "Love is a quiet miracle, and it's spelled N-o-a-m.",
+                memory: "I promise to notice the tiny lovely things.",
+                dream: "Every day with you is a miracle, but your birthday is extra special.",
+                prompt: "Send me 🌿",
+                game: "slider"
+            },
+            {
+                title: "Brave Hearts",
+                loveNote: "We're brave—because we love.",
+                memory: "I promise honest words and soft delivery.",
+                dream: "Celebrating your courage and beautiful heart.",
+                prompt: "Send me 🌉",
+                game: "fortune"
+            },
+            {
+                title: "The Way You Say My Name",
+                loveNote: "I replay the way you say my name.",
+                memory: "I promise to make you feel cherished in crowded places.",
+                dream: "Can't wait to hear you laugh on your birthday.",
+                prompt: "Send me 🎭",
+                game: "balloon"
+            },
+            {
+                title: "Little Rituals",
+                loveNote: "Our little rituals make ordinary days feel holy.",
+                memory: "I promise new rituals: one kiss for each year you've blessed the world.",
+                dream: "Creating new birthday traditions together.",
+                prompt: "Send me 🌅",
+                game: "heartcatcher"
+            },
+            {
+                title: "Your Laughter",
+                loveNote: "Your laughter lives rent-free in my head.",
+                memory: "I promise to collect more of it.",
+                dream: "Planning surprises that will make you laugh with joy.",
+                prompt: "Send me 🎸",
+                game: "wordsearch"
+            },
+            {
+                title: "I'm On Your Team",
+                loveNote: "Whatever the day brings—I'm on your team.",
+                memory: "I promise patience on the tired days.",
+                dream: "Cheering you on today and every day.",
+                prompt: "Send me 🌱",
+                game: "scratch"
+            },
+            {
+                title: "Firsts & Forevers",
+                loveNote: "Firsts with you feel like forevers.",
+                memory: "I promise to make your birthday unforgettable.",
+                dream: "First birthday we're celebrating—many more to come.",
+                prompt: "Send me 🔹",
+                game: "spin"
+            },
+            {
+                title: "Halfway to You",
+                loveNote: "Halfway there; fully yours.",
+                memory: "I promise a slow dance in our favorite spot.",
+                dream: "The countdown is halfway done, excitement building!",
+                prompt: "Send me 🍰",
+                game: "puzzle"
+            },
+            {
+                title: "The Quiet Kind of Love",
+                loveNote: "I love you loudly in quiet ways.",
+                memory: "I promise warm hands in cold weather.",
+                dream: "Loving you quietly and celebrating you loudly.",
+                prompt: "Send me 🕊️",
+                game: "connect"
+            },
+            {
+                title: "Your Soft Courage",
+                loveNote: "Your tenderness is courageous.",
+                memory: "I promise to protect our softness.",
+                dream: "Honoring your strength and gentleness.",
+                prompt: "Send me 🖼️",
+                game: "lovemeter"
+            },
+            {
+                title: "Held",
+                loveNote: "You are held, always.",
+                memory: "I promise to notice when you need holding even if you don't say it.",
+                dream: "Holding space for all your birthday dreams.",
+                prompt: "Send me 🦕",
+                game: "dare"
+            },
+            {
+                title: "Even the Silences",
+                loveNote: "I love even the silences with you.",
+                memory: "I promise more comfortable quiet.",
+                dream: "Comfortable silence, joyful celebration—both are us.",
+                prompt: "Send me 📚",
+                game: "memory"
+            },
+            {
+                title: "Your Eyes, My Map",
+                loveNote: "Your eyes are my favorite map.",
+                memory: "I promise to get lost together on purpose.",
+                dream: "Following the light in your eyes to new adventures.",
+                prompt: "Send me 🎨",
+                game: "quiz"
+            },
+            {
+                title: "Gentle Weather",
+                loveNote: "With you, the weather inside me is gentler.",
+                memory: "I promise warmth after any storm.",
+                dream: "May your birthday be filled with sunshine.",
+                prompt: "Send me 🏮",
+                game: "kisses"
+            },
+            {
+                title: "Home Is You",
+                loveNote: "Cities change. Home is you.",
+                memory: "I promise to make anywhere feel safe.",
+                dream: "Wherever we are, you're home—happy birthday, my love.",
+                prompt: "Send me 🧭",
+                game: "typing"
+            },
+            {
+                title: "Sweet Ordinary",
+                loveNote: "I want the legendary moments and every ordinary one in between.",
+                memory: "I promise to do the dishes of life with you.",
+                dream: "Your birthday: legendary. Us: perfectly ordinary and extraordinary.",
+                prompt: "Send me 🚶",
+                game: "fortune"
+            },
+            {
+                title: "Lightkeeper",
+                loveNote: "When things feel dim, you keep a light for me.",
+                memory: "I promise to keep one for you, too.",
+                dream: "You light up my life—time to light up yours.",
+                prompt: "Send me 💬",
+                game: "tictactoe"
+            },
+            {
+                title: "Count on Me",
+                loveNote: "You can count on me. Always.",
+                memory: "I promise to show up—especially when it's not easy.",
+                dream: "Counting down the days until I can celebrate you properly.",
+                prompt: "Send me 🚪",
+                game: "heartcatcher"
+            },
+            {
+                title: "Soft Future",
+                loveNote: "I imagine a soft future with you.",
+                memory: "I promise more picnics than arguments.",
+                dream: "Future birthdays together stretching into forever.",
+                prompt: "Send me 🌬️",
+                game: "slider"
+            },
+            {
+                title: "Everything Tastes Sweeter",
+                loveNote: "With you, even simple things taste sweeter.",
+                memory: "I promise to share the last bite.",
+                dream: "Saving the sweetest moments for your birthday.",
+                prompt: "Send me 🍯",
+                game: "scratch"
+            },
+            {
+                title: "Almost There",
+                loveNote: "We're almost there, and I'm already missing the countdown.",
+                memory: "I promise to keep making mini-adventures after your birthday.",
+                dream: "So close to celebrating you!",
+                prompt: "Send me 🚤",
+                game: "balloon"
+            },
+            {
+                title: "Butterflies & Excitement",
+                loveNote: "Butterflies dancing, birthday approaching.",
+                memory: "I promise gentle words always.",
+                dream: "The anticipation is beautiful.",
+                prompt: "Send me ⏰",
+                game: "memory"
+            },
+            {
+                title: "The Final Stretch",
+                loveNote: "Noam, thank you for being my favorite human. Your birthday is almost here.",
+                memory: "I promise to make this birthday one you'll always remember.",
+                dream: "One more day of the regular countdown, then the grand finale begins!",
+                prompt: "Text me how you're feeling ✨",
+                game: "puzzle"
+            }
+        ];
+
+        // Set start date (November 28, 2025) and birthday date (January 2, 2026)
+        const startDate = new Date('2025-11-28');
+        const flightDate = new Date('2026-01-02');
+        let currentDay = 1;
+
+        // For testing: change this date to test different scenarios
+        // const testDate = new Date('2025-12-25');
+        const testDate = null; // Set to null to use real current date
+
+        function getCurrentDate() {
+            return testDate ? new Date(testDate) : new Date();
+        }
+
+        function updateCountdown() {
+            const now = getCurrentDate();
+            const diff = flightDate.getTime() - now.getTime();
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        function getDaysPassed() {
+            const now = getCurrentDate();
+            const start = new Date(startDate);
+            
+            // Reset time to midnight for accurate day comparison
+            now.setHours(0, 0, 0, 0);
+            start.setHours(0, 0, 0, 0);
+            
+            const diffTime = now.getTime() - start.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const daysPassed = diffDays + 1; // +1 because day 1 starts on start date
+            
+            console.log('Current date:', now);
+            console.log('Start date:', start);
+            console.log('Days passed:', daysPassed);
+            
+            return Math.max(1, Math.min(35, daysPassed));
+        }
+
+        // Interactive Games
+        function createPuzzleGame() {
+            const messages = [
+                "I love you more than London fog",
+                "You make my heart skip beats",
+                "Forever choosing you every morning",
+                "Together is my favorite place"
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            const words = message.split(' ');
+            const shuffled = [...words].sort(() => Math.random() - 0.5);
+            
+            let selected = [];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💌 Unscramble My Love Note</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Tap the words in the right order:</p>
+                    <div class="puzzle-container" id="puzzleWords"></div>
+                    <div class="puzzle-container" id="puzzleSelected"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const wordsContainer = document.getElementById('puzzleWords');
+            const selectedContainer = document.getElementById('puzzleSelected');
+            
+            function render() {
+                wordsContainer.innerHTML = shuffled.map((word, i) => 
+                    `<div class="puzzle-word" data-index="${i}">${word}</div>`
+                ).join('');
+                
+                selectedContainer.innerHTML = selected.map((word, i) => 
+                    `<div class="puzzle-word correct">${word}</div>`
+                ).join('');
+                
+                wordsContainer.querySelectorAll('.puzzle-word').forEach(el => {
+                    el.onclick = () => {
+                        const index = parseInt(el.dataset.index);
+                        selected.push(shuffled[index]);
+                        shuffled.splice(index, 1);
+                        render();
+                        
+                        if (selected.join(' ') === message) {
+                            selectedContainer.innerHTML += `<p style="margin-top: 1rem; color: var(--blush); font-style: italic;">Perfect! 💕</p>`;
+                        }
+                    };
+                });
+            }
+            
+            render();
+        }
+
+        function createMemoryGame() {
+            const emojis = ['❤️', '💕', '💖', '💗', '💝', '💘'];
+            const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+            let flipped = [];
+            let matched = [];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💝 Memory Match</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Find all the matching pairs:</p>
+                    <div class="memory-grid" id="memoryGrid"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = cards.map((emoji, i) => 
+                `<div class="memory-card" data-index="${i}">?</div>`
+            ).join('');
+            
+            grid.querySelectorAll('.memory-card').forEach(card => {
+                card.onclick = () => {
+                    const index = parseInt(card.dataset.index);
+                    
+                    if (flipped.length < 2 && !flipped.includes(index) && !matched.includes(index)) {
+                        card.textContent = cards[index];
+                        card.classList.add('flipped');
+                        flipped.push(index);
+                        
+                        if (flipped.length === 2) {
+                            setTimeout(() => {
+                                if (cards[flipped[0]] === cards[flipped[1]]) {
+                                    grid.querySelectorAll('.memory-card').forEach((c, i) => {
+                                        if (flipped.includes(i)) {
+                                            c.classList.add('matched');
+                                            matched.push(i);
+                                        }
+                                    });
+                                    
+                                    if (matched.length === cards.length) {
+                                        setTimeout(() => {
+                                            grid.innerHTML += `<p style="margin-top: 1rem; color: var(--blush); font-weight: 600;">You found all the love! 💕</p>`;
+                                        }, 300);
+                                    }
+                                } else {
+                                    grid.querySelectorAll('.memory-card').forEach((c, i) => {
+                                        if (flipped.includes(i)) {
+                                            c.textContent = '?';
+                                            c.classList.remove('flipped');
+                                        }
+                                    });
+                                }
+                                flipped = [];
+                            }, 800);
+                        }
+                    }
+                };
+            });
+        }
+
+        function createLoveMeter() {
+            let level = 0;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💗 Love Meter</div>
+                    <p style="margin-bottom: 1rem; color: #666;">How much do you love me?</p>
+                    <div class="love-meter-container">
+                        <div class="love-meter">
+                            <div class="love-meter-fill" id="loveMeterFill">❤️</div>
+                        </div>
+                    </div>
+                    <button class="love-button" id="loveMeterBtn">Add More Love!</button>
+                    <p style="margin-top: 1rem; color: #999; font-size: 0.9rem;">(Hint: Keep clicking!)</p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const fill = document.getElementById('loveMeterFill');
+            const btn = document.getElementById('loveMeterBtn');
+            
+            btn.onclick = () => {
+                level = Math.min(100, level + 10);
+                fill.style.width = level + '%';
+                
+                if (level === 100) {
+                    btn.textContent = 'Maximum Love Achieved! 💕';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                }
+            };
+        }
+
+        function createFortuneGame() {
+            const fortunes = [
+                "A kiss under London rain is in your near future 💋",
+                "You will hold hands across at least 7 bridges ✨",
+                "A surprise awaits you at a red telephone booth 📞",
+                "Your laughter will echo through museum halls 🎨",
+                "Tea and love will be perfectly steeped together ☕",
+                "A double-decker moment will take your breath away 🚌",
+                "The London Eye will witness something special 🎡",
+                "A bookshop will hold the perfect moment 📚"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🔮 London Fortune Teller</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Click to reveal your London destiny:</p>
+                    <div class="fortune-box" id="fortuneBox">✨ Click below to reveal ✨</div>
+                    <button class="love-button" id="fortuneBtn">Tell My Fortune</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('fortuneBtn').onclick = () => {
+                const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+                document.getElementById('fortuneBox').textContent = fortune;
+            };
+        }
+
+        function createHeartCatcher() {
+            let score = 0;
+            let gameActive = true;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💕 Catch My Love</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Click the falling hearts! (30 seconds)</p>
+                    <div class="heart-catcher" id="heartCatcher"></div>
+                    <div class="score-display">Hearts Caught: <span id="heartScore">0</span></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('heartCatcher');
+            const scoreEl = document.getElementById('heartScore');
+            
+            function createHeart() {
+                if (!gameActive) return;
+                
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.textContent = ['💕', '💖', '💗', '💝'][Math.floor(Math.random() * 4)];
+                heart.style.left = Math.random() * 90 + '%';
+                heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                
+                heart.onclick = () => {
+                    score++;
+                    scoreEl.textContent = score;
+                    heart.remove();
+                };
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 5000);
+                
+                if (gameActive) {
+                    setTimeout(createHeart, Math.random() * 800 + 400);
+                }
+            }
+            
+            createHeart();
+            
+            setTimeout(() => {
+                gameActive = false;
+                container.innerHTML += `<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 1rem; text-align: center; font-weight: 600; color: var(--blush);">Game Over!<br>You caught ${score} hearts! 💕</div>`;
+            }, 30000);
+        }
+
+        function createKissCounter() {
+            let kisses = 0;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💋 Kiss Counter</div>
+                    <p style="margin-bottom: 1rem; color: #666;">How many kisses for me today?</p>
+                    <button class="kiss-button" id="kissBtn">💋</button>
+                    <div class="kiss-counter"><span id="kissCount">0</span> kisses</div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('kissBtn').onclick = () => {
+                kisses++;
+                document.getElementById('kissCount').textContent = kisses;
+                
+                if (kisses === 10) {
+                    document.getElementById('kissCount').parentElement.innerHTML = `<span style="color: var(--blush);">∞ kisses (and counting!) 💕</span>`;
+                }
+            };
+        }
+
+        function createScratchCard() {
+            const messages = [
+                "I'm so lucky to have you 💕",
+                "You're my favorite person in the whole world 🌍",
+                "Every day with you is a gift 🎁",
+                "You make my heart so full ❤️"
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">✨ Scratch to Reveal</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Scratch away the silver to reveal your message:</p>
+                    <div class="scratch-card">
+                        <div class="scratch-message">${message}</div>
+                        <canvas class="scratch-canvas" id="scratchCanvas" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const canvas = document.getElementById('scratchCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Draw scratch surface
+            ctx.fillStyle = '#c0c0c0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#999';
+            ctx.font = '20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('❤️ Scratch Here ❤️', canvas.width / 2, canvas.height / 2);
+            
+            let isScratching = false;
+            
+            function scratch(e) {
+                if (!isScratching) return;
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left || e.touches[0].clientX - rect.left;
+                const y = e.clientY - rect.top || e.touches[0].clientY - rect.top;
+                
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 20, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            canvas.addEventListener('mousedown', () => isScratching = true);
+            canvas.addEventListener('mouseup', () => isScratching = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isScratching = true; });
+            canvas.addEventListener('touchend', () => isScratching = false);
+            canvas.addEventListener('touchmove', (e) => { e.preventDefault(); scratch(e); });
+        }
+
+        function createSpinWheel() {
+            const prizes = [
+                "A surprise London kiss 💋",
+                "Your favorite coffee ☕",
+                "A silly dance together 💃",
+                "A piggyback ride 🐷",
+                "Choose our next meal 🍽️",
+                "A love letter 💌",
+                "Pick the music 🎵",
+                "Extra cuddles 🤗"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🎡 Spin for a Prize!</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Click to spin and win something special:</p>
+                    <div class="wheel-container">
+                        <div class="wheel-pointer">👇</div>
+                        <div class="wheel" id="wheel"></div>
+                    </div>
+                    <button class="love-button" id="spinBtn">SPIN!</button>
+                    <p id="prizeResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const wheel = document.getElementById('wheel');
+            const colors = ['#EFB7C6', '#C7D7E8', '#FFD4E5', '#B8E0D2', '#F7CAC9', '#DECDF5', '#FFE5B4', '#D4A5A5'];
+            
+            wheel.innerHTML = prizes.map((prize, i) => {
+                const rotation = (360 / prizes.length) * i;
+                return `<div class="wheel-section" style="background: ${colors[i]}; transform: rotate(${rotation}deg)"></div>`;
+            }).join('');
+            
+            let spinning = false;
+            document.getElementById('spinBtn').onclick = () => {
+                if (spinning) return;
+                spinning = true;
+                
+                const spins = 5 + Math.random() * 3;
+                const extraDegrees = Math.random() * 360;
+                const totalRotation = (spins * 360) + extraDegrees;
+                
+                wheel.style.transform = `rotate(${totalRotation}deg)`;
+                
+                setTimeout(() => {
+                    const index = Math.floor((360 - (extraDegrees % 360)) / (360 / prizes.length)) % prizes.length;
+                    document.getElementById('prizeResult').textContent = `You won: ${prizes[index]}`;
+                    spinning = false;
+                }, 3000);
+            };
+        }
+
+        function createTicTacToe() {
+            let board = Array(9).fill('');
+            let currentPlayer = '❤️';
+            let gameOver = false;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">❤️ Tic Tac Toe ⭕</div>
+                    <p style="margin-bottom: 1rem; color: #666;">You're ❤️, I'm ⭕. Let's play!</p>
+                    <div class="tictactoe-grid" id="tttGrid"></div>
+                    <p id="tttStatus" style="margin-top: 1rem; font-weight: 600; color: var(--blush);"></p>
+                    <button class="love-button" id="tttReset" style="margin-top: 1rem;">Play Again</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            function checkWinner() {
+                const lines = [
+                    [0,1,2], [3,4,5], [6,7,8],
+                    [0,3,6], [1,4,7], [2,5,8],
+                    [0,4,8], [2,4,6]
+                ];
+                
+                for (let line of lines) {
+                    const [a,b,c] = line;
+                    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                        return board[a];
+                    }
+                }
+                
+                return board.every(cell => cell) ? 'tie' : null;
+            }
+            
+            function aiMove() {
+                const empty = board.map((cell, i) => cell === '' ? i : null).filter(i => i !== null);
+                if (empty.length > 0) {
+                    const move = empty[Math.floor(Math.random() * empty.length)];
+                    board[move] = '⭕';
+                    render();
+                }
+            }
+            
+            function render() {
+                const grid = document.getElementById('tttGrid');
+                grid.innerHTML = board.map((cell, i) => 
+                    `<div class="tictactoe-cell ${cell ? 'taken' : ''}" data-index="${i}">${cell}</div>`
+                ).join('');
+                
+                const winner = checkWinner();
+                if (winner) {
+                    gameOver = true;
+                    if (winner === 'tie') {
+                        document.getElementById('tttStatus').textContent = "It's a tie! 💕";
+                    } else {
+                        document.getElementById('tttStatus').textContent = winner === '❤️' ? "You win! 🎉" : "I win! But you're still my winner 💕";
+                    }
+                } else {
+                    document.getElementById('tttStatus').textContent = currentPlayer === '❤️' ? "Your turn!" : "My turn...";
+                }
+                
+                if (!gameOver) {
+                    grid.querySelectorAll('.tictactoe-cell:not(.taken)').forEach(cell => {
+                        cell.onclick = () => {
+                            if (gameOver || currentPlayer !== '❤️') return;
+                            const i = parseInt(cell.dataset.index);
+                            board[i] = currentPlayer;
+                            currentPlayer = '⭕';
+                            render();
+                            
+                            if (!checkWinner()) {
+                                setTimeout(() => {
+                                    aiMove();
+                                    currentPlayer = '❤️';
+                                    const winner = checkWinner();
+                                    if (winner) render();
+                                }, 500);
+                            }
+                        };
+                    });
+                }
+            }
+            
+            document.getElementById('tttReset').onclick = () => {
+                board = Array(9).fill('');
+                currentPlayer = '❤️';
+                gameOver = false;
+                render();
+            };
+            
+            render();
+        }
+
+        function createQuizGame() {
+            const quizzes = [
+                {
+                    question: "What's my favorite thing about you?",
+                    options: ["Your smile", "Your laugh", "Your kindness", "Everything! ✨"],
+                    correct: 3
+                },
+                {
+                    question: "Our perfect London day includes:",
+                    options: ["Museum hopping 🎨", "Cozy cafés ☕", "Walking everywhere 🚶", "All of the above! 💕"],
+                    correct: 3
+                },
+                {
+                    question: "What makes us special?",
+                    options: ["We finish sentences", "We laugh at the same things", "We choose each other daily", "All of these 💖"],
+                    correct: 3
+                }
+            ];
+            
+            const quiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💭 Love Quiz</div>
+                    <div class="quiz-question">${quiz.question}</div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('quizOptions');
+            container.innerHTML = quiz.options.map((opt, i) => 
+                `<div class="quiz-option" data-index="${i}">${opt}</div>`
+            ).join('');
+            
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.onclick = () => {
+                    const index = parseInt(opt.dataset.index);
+                    if (index === quiz.correct) {
+                        opt.classList.add('correct');
+                        opt.textContent += ' ✓ Exactly right! 💕';
+                    } else {
+                        opt.classList.add('wrong');
+                        container.children[quiz.correct].classList.add('correct');
+                    }
+                    container.querySelectorAll('.quiz-option').forEach(o => o.style.pointerEvents = 'none');
+                };
+            });
+        }
+
+        function createTypingGame() {
+            const phrases = [
+                "I love you more than words can say",
+                "You make every day brighter",
+                "Forever and always yours",
+                "You are my favorite adventure"
+            ];
+            
+            const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">⌨️ Type the Love</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Type the message exactly as shown:</p>
+                    <div class="typing-target">${phrase}</div>
+                    <input type="text" class="typing-input" id="typingInput" placeholder="Start typing..." autocomplete="off">
+                    <p id="typingResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const input = document.getElementById('typingInput');
+            const result = document.getElementById('typingResult');
+            
+            input.oninput = () => {
+                if (input.value === phrase) {
+                    result.textContent = "Perfect! You know me so well 💕";
+                    input.disabled = true;
+                    input.style.borderColor = 'var(--blush)';
+                }
+            };
+        }
+
+        function createSliderPuzzle() {
+            const correctOrder = ['❤️', '💕', '💖', '💗', '💝', '💘', '💓', '💞', ''];
+            let tiles = [...correctOrder];
+            
+            // Shuffle by doing random valid moves
+            for (let i = 0; i < 50; i++) {
+                const emptyIndex = tiles.indexOf('');
+                const row = Math.floor(emptyIndex / 3);
+                const col = emptyIndex % 3;
+                const validMoves = [];
+                
+                if (row > 0) validMoves.push(emptyIndex - 3);
+                if (row < 2) validMoves.push(emptyIndex + 3);
+                if (col > 0) validMoves.push(emptyIndex - 1);
+                if (col < 2) validMoves.push(emptyIndex + 1);
+                
+                const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
+                [tiles[emptyIndex], tiles[randomMove]] = [tiles[randomMove], tiles[emptyIndex]];
+            }
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🧩 Heart Slider</div>
+                    <p style="margin-bottom: 0.5rem; color: #666;">Arrange hearts in this order:</p>
+                    <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 1.5rem;">
+                        ${correctOrder.slice(0, -1).join(' → ')}
+                    </div>
+                    <div class="slider-puzzle" id="sliderPuzzle"></div>
+                    <p id="sliderResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            function checkWin() {
+                return tiles.every((tile, i) => tile === correctOrder[i]);
+            }
+            
+            function render() {
+                const puzzle = document.getElementById('sliderPuzzle');
+                puzzle.innerHTML = tiles.map((tile, i) => 
+                    `<div class="slider-tile ${tile === '' ? 'empty' : ''}" data-index="${i}">${tile}</div>`
+                ).join('');
+                
+                if (checkWin()) {
+                    document.getElementById('sliderResult').textContent = "Perfect! You solved it! 💕";
+                    return;
+                }
+                
+                puzzle.querySelectorAll('.slider-tile:not(.empty)').forEach(tile => {
+                    tile.onclick = () => {
+                        const i = parseInt(tile.dataset.index);
+                        const emptyIndex = tiles.indexOf('');
+                        const row = Math.floor(i / 3);
+                        const col = i % 3;
+                        const emptyRow = Math.floor(emptyIndex / 3);
+                        const emptyCol = emptyIndex % 3;
+                        
+                        const isAdjacent = (Math.abs(row - emptyRow) === 1 && col === emptyCol) ||
+                                         (Math.abs(col - emptyCol) === 1 && row === emptyRow);
+                        
+                        if (isAdjacent) {
+                            [tiles[i], tiles[emptyIndex]] = [tiles[emptyIndex], tiles[i]];
+                            render();
+                        }
+                    };
+                });
+            }
+            
+            render();
+        }
+
+        function createBalloonPop() {
+            let score = 0;
+            const balloons = ['🎈', '🎈', '🎈', '🎈', '💖'];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🎈 Pop the Balloons!</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Pop all the balloons! Extra points for hearts 💖</p>
+                    <div class="balloon-game" id="balloonGame"></div>
+                    <div class="score-display">Score: <span id="balloonScore">0</span></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('balloonGame');
+            
+            for (let i = 0; i < 12; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.textContent = balloons[Math.floor(Math.random() * balloons.length)];
+                balloon.style.left = Math.random() * 85 + '%';
+                balloon.style.top = Math.random() * 80 + '%';
+                balloon.style.animationDelay = Math.random() * 2 + 's';
+                
+                balloon.onclick = () => {
+                    score += balloon.textContent === '💖' ? 5 : 1;
+                    document.getElementById('balloonScore').textContent = score;
+                    balloon.style.animation = 'pop 0.3s ease forwards';
+                    setTimeout(() => balloon.remove(), 300);
+                };
+                
+                container.appendChild(balloon);
+            }
+        }
+
+        function createWordSearch() {
+            const words = ['LOVE', 'KISS', 'HEART', 'HUG'];
+            const size = 8;
+            let grid = Array(size).fill().map(() => Array(size).fill(''));
+            let foundWords = [];
+            let selecting = false;
+            let selectedCells = [];
+            
+            // Place words
+            words.forEach(word => {
+                let placed = false;
+                let attempts = 0;
+                while (!placed && attempts < 100) {
+                    attempts++;
+                    const dir = Math.random() < 0.5 ? 'h' : 'v';
+                    const row = Math.floor(Math.random() * size);
+                    const col = Math.floor(Math.random() * size);
+                    
+                    if (dir === 'h' && col + word.length <= size) {
+                        const canPlace = grid[row].slice(col, col + word.length).every(c => c === '' || word.includes(c));
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) grid[row][col + i] = word[i];
+                            placed = true;
+                        }
+                    } else if (dir === 'v' && row + word.length <= size) {
+                        const canPlace = grid.slice(row, row + word.length).every((r, i) => r[col] === '' || word[i] === r[col]);
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) grid[row + i][col] = word[i];
+                            placed = true;
+                        }
+                    }
+                }
+            });
+            
+            // Fill remaining with random letters
+            for (let i = 0; i < size; i++) {
+                for (let j = 0; j < size; j++) {
+                    if (grid[i][j] === '') {
+                        grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                    }
+                }
+            }
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🔍 Love Word Search</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Find these words (click and drag):</p>
+                    <div class="word-list" id="wordList"></div>
+                    <div class="wordsearch-grid" id="wordGrid"></div>
+                    <p id="wordSearchResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('wordList').innerHTML = words.map(w => 
+                `<div class="word-item" data-word="${w}">${w}</div>`
+            ).join('');
+            
+            const gridEl = document.getElementById('wordGrid');
+            gridEl.innerHTML = grid.flat().map((letter, i) => 
+                `<div class="wordsearch-cell" data-index="${i}">${letter}</div>`
+            ).join('');
+            
+            const cells = gridEl.querySelectorAll('.wordsearch-cell');
+            
+            function checkSelection() {
+                const text = selectedCells.map(i => grid[Math.floor(i / size)][i % size]).join('');
+                const reversed = text.split('').reverse().join('');
+                
+                words.forEach(word => {
+                    if ((text === word || reversed === word) && !foundWords.includes(word)) {
+                        foundWords.push(word);
+                        selectedCells.forEach(i => cells[i].classList.add('found'));
+                        document.querySelector(`[data-word="${word}"]`).classList.add('found');
+                        
+                        if (foundWords.length === words.length) {
+                            document.getElementById('wordSearchResult').textContent = "You found all the words! 🎉💕";
+                        }
+                    }
+                });
+            }
+            
+            cells.forEach((cell, i) => {
+                cell.addEventListener('mousedown', () => {
+                    selecting = true;
+                    selectedCells = [i];
+                    cell.classList.add('selected');
+                });
+                
+                cell.addEventListener('mouseenter', () => {
+                    if (selecting && !selectedCells.includes(i)) {
+                        selectedCells.push(i);
+                        cell.classList.add('selected');
+                    }
+                });
+            });
+            
+            document.addEventListener('mouseup', () => {
+                if (selecting) {
+                    checkSelection();
+                    cells.forEach(c => c.classList.remove('selected'));
+                    selectedCells = [];
+                    selecting = false;
+                }
+            });
+        }
+
+        function createConnectHearts() {
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💝 Connect the Hearts</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Draw a path connecting all hearts without lifting your finger:</p>
+                    <canvas class="connect-canvas" id="connectCanvas" width="350" height="350"></canvas>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const canvas = document.getElementById('connectCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            const hearts = [
+                {x: 50, y: 50}, {x: 300, y: 50}, 
+                {x: 175, y: 175}, 
+                {x: 50, y: 300}, {x: 300, y: 300}
+            ];
+            
+            hearts.forEach(h => {
+                ctx.font = '30px Arial';
+                ctx.fillText('💖', h.x - 15, h.y + 10);
+            });
+            
+            let drawing = false;
+            let lastPos = null;
+            
+            canvas.onmousedown = canvas.ontouchstart = (e) => {
+                drawing = true;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                lastPos = {x, y};
+            };
+            
+            canvas.onmousemove = canvas.ontouchmove = (e) => {
+                if (!drawing) return;
+                e.preventDefault();
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                
+                ctx.strokeStyle = '#EFB7C6';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(lastPos.x, lastPos.y);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                lastPos = {x, y};
+            };
+            
+            canvas.onmouseup = canvas.ontouchend = () => {
+                drawing = false;
+            };
+        }
+
+        function createDareGame() {
+            const dares = [
+                "Text me right now and tell me one thing you love about us 💕",
+                "Take a selfie and send it with the caption 'Thinking of London' 📸",
+                "Send me a voice note saying 'I love you' in a British accent 🇬🇧",
+                "Draw a heart and text me a photo of it ❤️",
+                "Write down 3 things you're excited to do in London 📝",
+                "Send me your favorite emoji combo that describes us 💖✨",
+                "Tell me one thing you're grateful for today 🙏",
+                "Share a song that reminds you of me 🎵"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💌 Love Dare</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Ready for a little challenge?</p>
+                    <div class="card-stack">
+                        <div class="dare-card" id="dareCard">Click to reveal your dare! 💕</div>
+                    </div>
+                    <button class="love-button" id="newDareBtn">New Dare</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const card = document.getElementById('dareCard');
+            let flipped = false;
+            
+            function showDare() {
+                const dare = dares[Math.floor(Math.random() * dares.length)];
+                card.style.transform = 'rotateY(180deg)';
+                setTimeout(() => {
+                    card.textContent = dare;
+                    card.style.transform = 'rotateY(0deg)';
+                }, 300);
+            }
+            
+            card.onclick = () => {
+                if (!flipped) {
+                    showDare();
+                    flipped = true;
+                }
+            };
+            
+            document.getElementById('newDareBtn').onclick = () => {
+                showDare();
+                flipped = true;
+            };
+        }
+
+        function renderCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            const unlockedDays = getDaysPassed();
+            
+            grid.innerHTML = '';
+            
+            // Render first 30 days
+            for (let i = 1; i <= 30; i++) {
+                const card = document.createElement('div');
+                card.className = `day-card ${i <= unlockedDays ? 'unlocked' : 'locked'}`;
+                
+                if (i <= unlockedDays) {
+                    card.innerHTML = `
+                        <div class="day-number">${i}</div>
+                        <div class="day-label">Day</div>
+                    `;
+                    card.onclick = () => openDay(i);
+                } else {
+                    card.innerHTML = `
+                        <div class="lock-icon">🔒</div>
+                        <div class="day-number">${i}</div>
+                    `;
+                }
+                
+                grid.appendChild(card);
+            }
+            
+            // Render final 5 days
+            renderFinalDays(unlockedDays);
+        }
+
+        function renderFinalDays(unlockedDays) {
+            const finalDays = [
+                {
+                    day: 31,
+                    title: "💌 Our Love Story",
+                    description: "Write our love letter together",
+                    game: "loveLetter"
+                },
+                {
+                    day: 32,
+                    title: "🎯 How Well Do You Know Me?",
+                    description: "The ultimate couple's quiz",
+                    game: "coupleQuiz"
+                },
+                {
+                    day: 33,
+                    title: "🌟 Virtual Date Night",
+                    description: "Plan our perfect date",
+                    game: "dateNight"
+                },
+                {
+                    day: 34,
+                    title: "🎄 Birthday Wish Tree",
+                    description: "Hang your wishes on our tree",
+                    game: "wishTree"
+                },
+                {
+                    day: 35,
+                    title: "🎂 Happy Birthday, Noam!",
+                    description: "The grand finale celebration",
+                    game: "birthday"
+                }
+            ];
+            
+            const container = document.getElementById('finalDaysGrid');
+            container.className = 'final-days-grid';
+            container.innerHTML = finalDays.map(fd => `
+                <div class="final-day-card ${fd.day <= unlockedDays ? '' : 'locked'}" ${fd.day <= unlockedDays ? `onclick="openFinalDay(${fd.day})"` : ''} style="cursor: ${fd.day <= unlockedDays ? 'pointer' : 'not-allowed'}">
+                    <div class="final-day-header">
+                        <div class="final-day-number">Day ${fd.day}</div>
+                        <div class="final-day-title">${fd.title}</div>
+                        <p style="color: #666; margin-top: 0.5rem;">${fd.description}</p>
+                    </div>
+                    ${fd.day > unlockedDays ? '<div style="text-align: center; font-size: 3rem; margin-top: 2rem;">🔒</div>' : '<div style="text-align: center; color: var(--blush); font-weight: 600; margin-top: 1rem;">Click to play! ✨</div>'}
+                </div>
+            `).join('');
+        }
+
+        function openFinalDay(day) {
+            currentDay = day;
+            const games = {
+                31: createLoveLetterBuilder,
+                32: createCoupleQuiz,
+                33: createVirtualDateNight,
+                34: createWishTree,
+                35: createBirthdayCelebration
+            };
+            
+            const modal = document.getElementById('modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modalContent.innerHTML = `
+                <button class="close-btn" id="closeBtn">×</button>
+                <div class="final-game-container" id="finalGameContainer"></div>
+            `;
+            
+            games[day]();
+            
+            document.getElementById('closeBtn').onclick = closeModal;
+            modal.classList.add('active');
+        }
+
+        // Final Day Special Games
+        function createLoveLetterBuilder() {
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 31 of 35 - The Grand Finale Begins</div>
+                    <h2 class="day-title">💌 Our Love Story</h2>
+                </div>
+                <div class="letter-builder">
+                    <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
+                        Let's write a love letter together. Fill in the blanks and watch it come to life!
+                    </p>
+                    <div class="letter-prompts">
+                        <div class="letter-prompt">
+                            <label>My favorite thing about you:</label>
+                            <input type="text" id="favorite" placeholder="your smile, your laugh, etc.">
+                        </div>
+                        <div class="letter-prompt">
+                            <label>A memory that makes me smile:</label>
+                            <textarea id="memory" placeholder="Tell me about a special moment..."></textarea>
+                        </div>
+                        <div class="letter-prompt">
+                            <label>What I'm most excited for:</label>
+                            <input type="text" id="excited" placeholder="celebrating you, our future, etc.">
+                        </div>
+                        <div class="letter-prompt">
+                            <label>My promise to you:</label>
+                            <textarea id="promise" placeholder="I promise to..."></textarea>
+                        </div>
+                    </div>
+                    <button class="love-button" style="width: 100%; margin-top: 1.5rem;" onclick="generateLetter()">
+                        Generate Our Love Letter 💕
+                    </button>
+                    <div class="letter-preview" id="letterPreview">
+                        Your beautiful love letter will appear here...
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            window.generateLetter = () => {
+                const favorite = document.getElementById('favorite').value || '[your favorite thing]';
+                const memory = document.getElementById('memory').value || '[a special memory]';
+                const excited = document.getElementById('excited').value || '[what excites you]';
+                const promise = document.getElementById('promise').value || '[your promise]';
+                
+                const letter = `My Dearest Noam,
+
+As your birthday approaches, I find myself thinking about ${favorite}. It's one of the countless reasons my heart chose you.
+
+I keep replaying this memory: ${memory}. It's moments like these that remind me how lucky I am.
+
+I'm so excited for ${excited}. Every day with you is a gift, but celebrating you feels extra special.
+
+Here's my promise: ${promise}
+
+Happy almost-birthday, my love.
+
+Forever yours,
+[Your Name] ❤️`;
+                
+                document.getElementById('letterPreview').textContent = letter;
+            };
+        }
+
+        function createCoupleQuiz() {
+            const questions = [
+                {
+                    q: "What's Noam's favorite way to spend a cozy evening?",
+                    options: ["Movie marathon", "Reading together", "Cooking together", "Deep conversations"],
+                    points: 10
+                },
+                {
+                    q: "If Noam could travel anywhere right now, where would it be?",
+                    options: ["Beach paradise", "Mountain retreat", "European city", "Tropical island"],
+                    points: 10
+                },
+                {
+                    q: "What's Noam's love language?",
+                    options: ["Words of affirmation", "Quality time", "Physical touch", "Acts of service"],
+                    points: 15
+                },
+                {
+                    q: "What makes Noam feel most loved?",
+                    options: ["Surprise gestures", "Thoughtful words", "Quality time together", "Small daily acts"],
+                    points: 15
+                },
+                {
+                    q: "What's Noam's dream birthday celebration?",
+                    options: ["Intimate dinner", "Adventure day", "Relaxing spa day", "Surprise party"],
+                    points: 20
+                }
+            ];
+            
+            let score = 0;
+            let currentQ = 0;
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 32 of 35</div>
+                    <h2 class="day-title">🎯 How Well Do You Know Me?</h2>
+                </div>
+                <div class="score-tracker">Score: <span id="quizScore">0</span> / 70</div>
+                <div class="quiz-advanced" id="quizContainer"></div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            function renderQuestion() {
+                if (currentQ >= questions.length) {
+                    const finalScore = score;
+                    const percentage = Math.round((finalScore / 70) * 100);
+                    let message = '';
+                    
+                    if (percentage >= 80) message = "You know me so well! 💕";
+                    else if (percentage >= 60) message = "Pretty good! We're learning together 🌟";
+                    else message = "We have so much more to discover about each other! 💖";
+                    
+                    document.getElementById('quizContainer').innerHTML = `
+                        <div style="text-align: center; padding: 3rem;">
+                            <h2 style="font-size: 3rem; color: var(--blush); margin-bottom: 1rem;">${finalScore} / 70</h2>
+                            <p style="font-size: 1.5rem; margin-bottom: 1rem;">${percentage}%</p>
+                            <p style="font-size: 1.2rem; color: #666;">${message}</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const q = questions[currentQ];
+                document.getElementById('quizContainer').innerHTML = `
+                    <div class="quiz-question-advanced">
+                        <h3>Question ${currentQ + 1} of ${questions.length}</h3>
+                        <p style="font-size: 1.2rem; margin: 1rem 0;">${q.q}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((opt, i) => `
+                                <div class="quiz-option" onclick="answerQuestion(${i})">${opt}</div>
+                            `).join('')}
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--blush); font-weight: 600;">
+                            Worth ${q.points} points
+                        </p>
+                    </div>
+                `;
+            }
+            
+            window.answerQuestion = (choiceIndex) => {
+                // Award points for any answer (you can customize which answers give points)
+                const q = questions[currentQ];
+                score += q.points;
+                document.getElementById('quizScore').textContent = score;
+                currentQ++;
+                setTimeout(renderQuestion, 500);
+            };
+            
+            renderQuestion();
+        }
+
+        function createVirtualDateNight() {
+            const dateOptions = [
+                {
+                    title: "🌅 Sunset Picnic",
+                    description: "Cozy blanket, favorite snacks, and golden hour magic",
+                    activities: ["Watch the sunset", "Share stories", "Stargaze together"]
+                },
+                {
+                    title: "🏠 Cozy Home Date",
+                    description: "Cooking together, movie marathon, and all the cuddles",
+                    activities: ["Cook a meal together", "Build a blanket fort", "Movie & popcorn"]
+                },
+                {
+                    title: "🎨 Creative Adventure",
+                    description: "Art, music, and making memories",
+                    activities: ["Paint together", "Make playlists", "Dance in the kitchen"]
+                },
+                {
+                    title: "🌃 City Night Out",
+                    description: "Dressed up, fancy dinner, and exploring together",
+                    activities: ["Romantic dinner", "Evening walk", "Rooftop views"]
+                }
+            ];
+            
+            let selected = null;
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 33 of 35</div>
+                    <h2 class="day-title">🌟 Plan Our Perfect Date</h2>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Choose your dream date and let's make it happen!
+                    </p>
+                </div>
+                <div class="date-planner" id="datePlanner"></div>
+                <div id="dateResult" style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--blush);"></div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            const planner = document.getElementById('datePlanner');
+            planner.innerHTML = dateOptions.map((date, i) => `
+                <div class="date-choice" onclick="selectDate(${i})">
+                    <h3>${date.title}</h3>
+                    <p style="color: #666; margin: 0.5rem 0;">${date.description}</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                        ${date.activities.map(act => `<li style="padding: 0.25rem 0;">✨ ${act}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            
+            window.selectDate = (index) => {
+                document.querySelectorAll('.date-choice').forEach((el, i) => {
+                    el.classList.toggle('selected', i === index);
+                });
+                selected = index;
+                document.getElementById('dateResult').innerHTML = `
+                    Perfect choice! ${dateOptions[index].title} it is! 💕<br>
+                    <button class="love-button" style="margin-top: 1rem;" onclick="confirmDate()">
+                        Let's Do This! 🎉
+                    </button>
+                `;
+            };
+            
+            window.confirmDate = () => {
+                if (selected !== null) {
+                    document.getElementById('dateResult').innerHTML = `
+                        <div style="background: rgba(239, 183, 198, 0.1); padding: 2rem; border-radius: 1rem; margin-top: 1rem;">
+                            <h3 style="color: var(--blush); margin-bottom: 1rem;">Date Night Confirmed! 🎊</h3>
+                            <p>I can't wait to make this special for you. Save the date! 📅</p>
+                        </div>
+                    `;
+                }
+            };
+        }
+
+        function createWishTree() {
+            let wishes = [];
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 34 of 35</div>
+                    <h2 class="day-title">🎄 Your Birthday Wish Tree</h2>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Make a wish and hang it on our tree. Each wish is a promise of something beautiful to come.
+                    </p>
+                </div>
+                <div class="wish-tree-container">
+                    <div class="wish-tree">
+                        <div class="tree-leaves"></div>
+                        <div class="tree-trunk"></div>
+                        <div id="ornaments"></div>
+                    </div>
+                    <div class="wish-input">
+                        <input type="text" id="wishText" placeholder="Type your birthday wish..." maxlength="50">
+                        <button class="love-button" onclick="addWish()">Add Wish ✨</button>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: #999; font-size: 0.9rem;">
+                        Click on ornaments to read wishes
+                    </p>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            const ornamentEmojis = ['🎁', '⭐', '💝', '🎀', '✨', '💫', '🌟', '💖'];
+            
+            window.addWish = () => {
+                const input = document.getElementById('wishText');
+                const wish = input.value.trim();
+                
+                if (wish) {
+                    wishes.push(wish);
+                    const ornament = document.createElement('div');
+                    ornament.className = 'wish-ornament';
+                    ornament.textContent = ornamentEmojis[wishes.length % ornamentEmojis.length];
+                    ornament.style.fontSize = '2rem';
+                    ornament.style.left = (20 + Math.random() * 60) + '%';
+                    ornament.style.top = (10 + Math.random() * 50) + '%';
+                    ornament.title = wish;
+                    ornament.onclick = () => {
+                        alert(`💭 Wish: "${wish}"`);
+                    };
+                    
+                    document.getElementById('ornaments').appendChild(ornament);
+                    input.value = '';
+                    
+                    if (wishes.length >= 5) {
+                        document.getElementById('wishText').placeholder = "Tree is full of beautiful wishes! 🌟";
+                        document.getElementById('wishText').disabled = true;
+                    }
+                }
+            };
+        }
+
+        function createBirthdayCelebration() {
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 35 of 35 - THE DAY IS HERE!</div>
+                    <h2 class="day-title" style="font-size: 3rem;">🎂 Happy Birthday, Noam! 🎉</h2>
+                </div>
+                <div style="text-align: center; padding: 3rem 2rem;">
+                    <div style="font-size: 5rem; margin: 2rem 0; animation: heartbeat 1.5s ease-in-out infinite;">
+                        🎊🎉🎂🎁✨
+                    </div>
+                    <div style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--blush); line-height: 2; margin: 2rem 0;">
+                        Today, we celebrate you—<br>
+                        your kindness, your laughter,<br>
+                        your beautiful heart.<br><br>
+                        Thank you for being exactly who you are.<br>
+                        Here's to this year and all the ones to come.
+                    </div>
+                    <div style="margin: 3rem 0;">
+                        <div style="font-size: 3rem; margin: 1rem 0;">🎈</div>
+                        <p style="font-size: 1.3rem; color: #666; max-width: 500px; margin: 0 auto;">
+                            35 days of counting down, and now we're here. I hope this brought a little magic to your mornings and made the wait feel special.
+                        </p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%); color: white; padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <p style="font-size: 1.5rem; margin: 0;">
+                            Make a wish, blow out the candles, and let's make this year unforgettable. 🕯️✨
+                        </p>
+                    </div>
+                    <button class="love-button" style="font-size: 1.2rem; padding: 1.5rem 3rem;" onclick="alert('🎉 Wishing you the happiest birthday! I love you! 💕')">
+                        Blow Out the Candles! 🎂
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+        }
+
+        function openDay(day) {
+            const unlockedDays = getDaysPassed();
+            if (day > unlockedDays) return;
+            
+            currentDay = day;
+            const entry = entries[day - 1];
+            
+            document.getElementById('dayMeta').textContent = `Day ${day} of 35`;
+            document.getElementById('dayTitle').textContent = entry.title;
+            document.getElementById('loveNote').textContent = entry.loveNote;
+            document.getElementById('memoryPromise').textContent = entry.memory;
+            document.getElementById('londonDream').textContent = entry.dream;
+            document.getElementById('promptBox').textContent = entry.prompt;
+            
+            document.getElementById('prevBtn').disabled = day === 1;
+            document.getElementById('nextBtn').disabled = day === unlockedDays;
+            
+            // Load interactive game if exists
+            const gameContainer = document.getElementById('interactiveGame');
+            if (entry.game) {
+                switch(entry.game) {
+                    case 'puzzle': createPuzzleGame(); break;
+                    case 'memory': createMemoryGame(); break;
+                    case 'lovemeter': createLoveMeter(); break;
+                    case 'fortune': createFortuneGame(); break;
+                    case 'heartcatcher': createHeartCatcher(); break;
+                    case 'kisses': createKissCounter(); break;
+                    case 'scratch': createScratchCard(); break;
+                    case 'spin': createSpinWheel(); break;
+                    case 'tictactoe': createTicTacToe(); break;
+                    case 'quiz': createQuizGame(); break;
+                    case 'typing': createTypingGame(); break;
+                    case 'slider': createSliderPuzzle(); break;
+                    case 'balloon': createBalloonPop(); break;
+                    case 'wordsearch': createWordSearch(); break;
+                    case 'connect': createConnectHearts(); break;
+                    case 'dare': createDareGame(); break;
+                }
+            } else {
+                gameContainer.innerHTML = '';
+            }
+            
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        document.getElementById('todaySurpriseBtn').addEventListener('click', () => {
+            openDay(getDaysPassed());
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', closeModal);
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentDay > 1) {
+                openDay(currentDay - 1);
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            const unlockedDays = getDaysPassed();
+            if (currentDay < unlockedDays) {
+                openDay(currentDay + 1);
+            }
+        });
+
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        renderCalendar();
+    </script>
+</body>
+</html>
